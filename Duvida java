@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .Menu_Principal_ITENS {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .Menu_Principal_ITENS {
+    background-color: red;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.SubMenus_MONTAGEM {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.SubMenus_MONTAGEM a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    /* text-align: center; */
+    text-align: left;
+}
+
+.SubMenus_MONTAGEM a:hover {background-color: #f1f1f1}
+
+
+.CSS_Exibe_Oculta {display:block;}
+</style>
+</head>
+<body>
+
+<ul>
+  
+  <li><a href="#home">Home</a></li>                                                         <!-- <li><a class="active" href="#home">Home</a></li> -->
+  <li><a href="#news">News</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="Menu_Principal_ITENS" onclick="SubMenu_EXIBE_OCULTA('SubMenus_MONTAGEM')">Clique-me</a>
+    <div class="SubMenus_MONTAGEM">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>    
+  </li>
+</ul>
+
+
+<script>
+  function SubMenu_EXIBE_OCULTA(menu){
+    var obj=document.getElementsByClassName("menu");
+      if(obj.style.display == 'block'){
+        obj.style.display = 'none';
+      } else {obj.style.display = 'block';}                
+  }
+</script>
+
+</body>
+</html>
